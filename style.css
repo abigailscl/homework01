@@ -29,3 +29,7 @@ li a {
 li a:hover:not(.active) {
   background-color: lightskyblue;
 }
+/*Sign up*/
+*{
+  box-sizing: border-box;
+}
