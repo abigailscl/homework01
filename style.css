@@ -5,8 +5,8 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  border: 1px solid lightseagreen;
-  background-color:  lightseagreen;
+  border: 1px solid darkturquoise;
+  background-color:  darkturquoise;
   position: fixed;
   top: 0;
   width: 100%;
@@ -15,6 +15,7 @@ ul {
 li {
   float: left;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: darkturquoise;
 }
 
 li a {
