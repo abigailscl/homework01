@@ -73,8 +73,7 @@ body{
   grid-column: 1 / 3;
 }
 .contact-form form button,
-.contact-form form input,
-.contact-form form textarea{
+.contact-form form input{
   width: 100%;
   padding: .7em;
   border: none;
@@ -97,7 +96,7 @@ body{
   transition: background-color 1s ease-out;
   outline: 0;
 }
-/*large screen*/
+/*large screen
 @media(min-width: 700px){
   body{
     padding: 0 4rem;

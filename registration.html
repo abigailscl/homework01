@@ -6,12 +6,42 @@
       REGISTRATION
   </title>
   <script>
-    function checkEmail(valor) {
-    if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
-    alert("La dirección de email " + valor + " es correcta!.");
-    } else {
-    alert("La dirección de email es incorrecta!.");
+    function readData(){
+        var textName = document.getElementById("fullname").value;
+        var textEmail = document.getElementById("email").value;
+        var textPhone = document.getElementById("phone").value;
+        var textDate = document.getElementById("date").value;
+        if(checkEmail(textEmail) && checkPhone(textPhone) && checkPhone(textPhone))
+        {
+            alert("Your information is correct");
+        } else {
+            alert("Your information is wrong");
+        }
     }
+    function checkEmail(email) {
+        if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function checkPhone(phone){
+        const regex = /^[0-9]*$/;
+        if(regex.test(phone) && phone.lenght != 10){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function checkName(name){
+        const regex = /^[0-9]*$/;
+        if(regex.test(name)){
+            return false;
+        }else if( name.lenght != 10){
+            return false;
+        }else{
+            return true;
+        }
     }
   </script>
 </head>
@@ -34,18 +64,22 @@
                     <form action =" ">
                         <p>
                             <label for ="fullname">Full Name</label>
-                            <input type="text" name ="fullname" id="fullname">
+                            <input type="text" name ="fullname"  placeholder="Amy Fun" id="fullname">
                         </p>
                         <p>
                             <label>Email</label>
-                            <input type="email" name ="email">
+                            <input type="email" name ="email"  placeholder="example@gmail.com" id="email">
                         </p>
-                        <p class="block">
+                        <p>
                             <label>Phone</label>
-                            <input type="text" name="phone">
+                            <input type="text" name="phone" placeholder="0960953023" id="phone">
+                        </p>
+                        <p>
+                            <label>Date</label>
+                            <input type="date" name="date " id="date">
                         </p>
                         <p class="block">
-                            <button type="submit">
+                            <button type="submit" onclick="readData()">
                                 Submit
                             </button>
                         </p>
