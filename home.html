@@ -6,6 +6,61 @@
   <title >
 	HOME
 </title>
+    <script>
+		function readData(){
+			var textName = document.getElementById("fullname").value;
+			var textEmail = document.getElementById("email").value;
+			var textAddress = document.getElementById("direction").value;
+			var textID = document.getElementById("ID").value;
+			if(checkEmail(textEmail) && checkText(textName) && checkPhone(textPhone)&&checkID(textID))
+			{
+				alert("Your information is correct");
+			} else {
+				alert("Your information is wrong");
+			}
+    	}
+		function checkEmail(email) {
+			if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email)){
+				return true;
+			} else {
+				return false;
+			}
+    	}	
+		function checkText(name){
+			const regex = /^[0-9]*$/;
+			if(regex.test(name)){
+				return false;
+			}else{
+				return true;
+			}
+    	}
+        function checkID(cad) {
+            var total = 0;
+            var longitud = cad.length;
+            var longcheck = longitud - 1;
+
+            if (cad !== "" && longitud === 10){
+                for(i = 0; i < longcheck; i++){
+                    if (i%2 === 0) {
+                        var aux = cad.charAt(i) * 2;
+                    if (aux > 9) aux -= 9;
+                        total += aux;
+                    } else {
+                        total += parseInt(cad.charAt(i)); 
+                    }
+                }
+
+                total = total % 10 ? 10 - total % 10 : 0;
+
+                if (cad.charAt(longitud-1) == total) {
+                    return true;
+                }else{
+                   return false;
+                }
+            }
+        }
+
+    </script>
 </head>
 <body>
 		<div id="header">
@@ -18,5 +73,36 @@
 				<li><a href="../DWA/registration.html">Registration</a></li>
 			</ul>
 		</div>
+		<div class ="content">
+            <h1 class ="logo">Billing<span></span></h1>
+            <div class= "contact-wrapper">
+                <div class= "contact-form">
+                    <h3>Billing</h3>
+                    <form action =" ">
+                        <p>
+                            <label for ="fullname">Full name</label>
+                            <input type="text" name ="fullname"  placeholder="Carl Freezer" id="fullname">
+                        </p>
+                        <p>
+                            <label>Email</label>
+                            <input type="email" name ="email"  placeholder="example@gmail.com" id="email">
+                        </p>
+                        <p>
+                            <label>Direction</label>
+                            <input type="text" name="direction" placeholder="Av Sucre" id="direction">
+                        </p>
+                        <p>
+                            <label>ID</label>
+                            <input type="text" name="ID" placeholder="1004805758" id="ID">
+                        </p>
+                        <p class="block">
+                            <button type="submit" onclick="readData()">
+                                Submit
+                            </button>
+                        </p>
+                    </form> 
+                </div>
+            </div>
+        </div>
 	</body>
 </html>
