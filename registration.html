@@ -5,6 +5,15 @@
   <title >
       REGISTRATION
   </title>
+  <script>
+    function checkEmail(valor) {
+    if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+    alert("La dirección de email " + valor + " es correcta!.");
+    } else {
+    alert("La dirección de email es incorrecta!.");
+    }
+    }
+  </script>
 </head>
 <body>
 		<div id="header">
@@ -31,11 +40,11 @@
                             <label>Email</label>
                             <input type="email" name ="email">
                         </p>
-                        <p>
+                        <p class="block">
                             <label>Phone</label>
                             <input type="text" name="phone">
                         </p>
-                        <p>
+                        <p class="block">
                             <button type="submit">
                                 Submit
                             </button>
